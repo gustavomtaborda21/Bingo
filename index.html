@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Bingo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#004080">
+<body>
+  <div class="header">
+    <div>
+      <h1>Festa de São Pedro</h1>
+      <h1><span id="numeroRodada">1ª</span> Rodada - <span id="tipoRodada">Cartela Cheia</span></h1>
+    </div>
+    <button id="btnConfig">⚙️</button>
+
+  </div>
+
+  <div class="main-container">
+    <div class="bingo-section">
+      <div class="bingo-labels">
+        <div>B</div>
+        <div>I</div>
+        <div>N</div>
+        <div>G</div>
+        <div>O</div>
+      </div>
+      <div class="bingo-board" id="bingoBoard"></div>
+    </div>
+  </div>
+
+  <div class="footer-panel">
+    <div class="ultima-pedra">
+      <h3>Última Pedra:</h3>
+      <div class="bola" id="ultimaPedra">--</div>
+      <input type="number" id="numeroInput" placeholder="Digite o número" min="1" max="75" autofocus />
+    </div>
+
+    <div class="premios">
+      <h3>Prêmios</h3>
+      <ul id="listaPremios">
+        <li>1° Prêmio</li>
+        <li>2° Prêmio</li>
+        <li>3° Prêmio</li>
+      </ul>
+    </div>
+
+    <div class="patrocinadores">
+      <h3>Patrocinadores</h3>
+      <div class="slideshow">
+        <img src="patrocinadores/p1.jpg" alt="Patrocinador" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Tela Cheia -->
+  <div class="fullscreen-bola hidden" id="fullscreenBola">
+    <span id="fullscreenLetra">B</span>
+    <span id="fullscreenNumero">12</span>
+  </div>
+
+  <!-- Modal de Configuração -->
+  <div class="modal hidden" id="modalConfig">
+    <div class="modal-content">
+      <h2>Configurações</h2>
+      <label>Rodada:</label>
+      <input type="number" id="inputRodada" min="1" /><br /><br />
+      <label>Tipo de Rodada:</label>
+      <select id="inputTipoRodada">
+        <option>Cartela Cheia</option>
+        <option>Uma Linha</option>
+      <label>Prêmios (separar por vírgula):</label>
+      <input type="text" id="inputPremios" placeholder="TV, R$ 100, Brinde" /><br /><br />
+       </select><br /><br />
+        <label>Cor da Cartela:</label>
+<select id="inputCorPrincipal">
+  <option value="#004080">Azul</option>
+  <option value="#800000">Vermelho</option>
+  <option value="#FF69B4">Rosa</option>
+  <option value="#FFD700">Amarelo</option>
+  <option value="#32CD32">Verde</option>
+  <option value="#333333">Preto</option>
+  <option value="#808080">Cinza</option>
+</select>
+      <button id="salvarConfig">Salvar</button>
+      <button id="fecharConfig">Fechar</button>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
